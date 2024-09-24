@@ -71,7 +71,6 @@ async def getCity(city: str, limit: int = 5):
     else:
         raise HTTPException(404)
 
-
 @app.get("/getWeather")
 async def getWeather(lat: float, lon: float):
     async with session.get(BASE_FORECAST_URL + f'lat={lat}&lon={lon}') as r:
